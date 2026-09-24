@@ -1,0 +1,25 @@
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 14:50:02
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 1
+
+Pass Rate: 50.00%
+
+DETAILED RESULTS:
+-----------------
+Test #6: TC-04 CAN Controller Node Set All
+  Status: PASS | Expected: YES
+
+Test #6: TC-04 CAN Controller Node Set All
+  Status: ABORTED | Expected: NO
+
+================================================================================

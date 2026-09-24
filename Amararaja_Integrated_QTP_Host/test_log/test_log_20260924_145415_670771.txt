@@ -1,0 +1,182 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 14:54:15
+================================================================================
+
+[2026-09-24T14:54:15] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T14:54:15] [QTP] Connected to target
+[2026-09-24T14:54:15] [HOST] PC -> TARGET: PING
+[2026-09-24T14:54:15] [TARGET] Received command: PING
+[2026-09-24T14:54:15] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #4: TC-04 CAN Controller Node Start all
+Command: TEST_CAN_CONTROLLER_START_ALL
+Started: 2026-09-24 14:54:19
+--------------------------------------------------------------------------------
+[2026-09-24T14:54:19] [EXECUTING] Running test: TEST_CAN_CONTROLLER_START_ALL
+[2026-09-24T14:54:19] [HOST] PC -> TARGET: CAN_CONTROLLER_START_ALL_TEST
+[2026-09-24T14:54:19] [TARGET] Received command: CAN_CONTROLLER_START_ALL_TEST
+[2026-09-24T14:54:19] Field                       Value
+------------------------------------------------------------
+Action                      start_all
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+group                       1
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Start_All_20260924_092420.txt
+[2026-09-24T14:54:19] [RESULT] Status: PASS
+[2026-09-24T14:54:19] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Start_All_20260924_092420.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Start_All_20260924_092420.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:54:31
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #5: TC-04 CAN Controller Node Stop All
+Command: TEST_CAN_CONTROLLER_STOP_ALL
+Started: 2026-09-24 14:54:36
+--------------------------------------------------------------------------------
+[2026-09-24T14:54:36] [EXECUTING] Running test: TEST_CAN_CONTROLLER_STOP_ALL
+[2026-09-24T14:54:36] [HOST] PC -> TARGET: CAN_CONTROLLER_STOP_ALL_TEST
+[2026-09-24T14:54:36] [TARGET] Received command: CAN_CONTROLLER_STOP_ALL_TEST
+[2026-09-24T14:54:36] Field                       Value
+------------------------------------------------------------
+Action                      stop_all
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+group                       1
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Stop_All_20260924_092437.txt
+[2026-09-24T14:54:36] [RESULT] Status: PASS
+[2026-09-24T14:54:36] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Stop_All_20260924_092437.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Stop_All_20260924_092437.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:54:41
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #6: TC-04 CAN Controller Node Set All
+Command: TEST_CAN_CONTROLLER_SET_ALL
+Started: 2026-09-24 14:54:44
+--------------------------------------------------------------------------------
+[2026-09-24T14:54:46] [EXECUTING] Running test: TEST_CAN_CONTROLLER_SET_ALL
+[2026-09-24T14:54:46] [HOST] PC -> TARGET: CAN_CONTROLLER_SET_ALL_TEST
+[2026-09-24T14:54:46] [TARGET] Received command: CAN_CONTROLLER_SET_ALL_TEST
+[2026-09-24T14:54:46] Field                       Value
+------------------------------------------------------------
+Action                      set_all
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+current                     41.0
+group                       1
+voltage                     500.0
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_092447.txt
+[2026-09-24T14:54:46] [RESULT] Status: PASS
+[2026-09-24T14:54:46] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_092447.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_092447.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:54:48
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #7: TC-04 CAN Controller Node Start
+Command: TEST_CAN_CONTROLLER_START
+Started: 2026-09-24 14:54:52
+--------------------------------------------------------------------------------
+[2026-09-24T14:55:00] [EXECUTING] Running test: TEST_CAN_CONTROLLER_START
+[2026-09-24T14:55:00] [HOST] PC -> TARGET: CAN_CONTROLLER_START_TEST
+[2026-09-24T14:55:00] [TARGET] Received command: CAN_CONTROLLER_START_TEST
+[2026-09-24T14:55:00] Field                       Value
+------------------------------------------------------------
+Action                      start
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+address                     1
+current                     41.0
+voltage                     500.0
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Start_20260924_092501.txt
+[2026-09-24T14:55:00] [RESULT] Status: PASS
+[2026-09-24T14:55:00] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Start_20260924_092501.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Start_20260924_092501.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:55:02
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #8: TC-04 CAN Controller Node Stop
+Command: TEST_CAN_CONTROLLER_STOP
+Started: 2026-09-24 14:55:07
+--------------------------------------------------------------------------------
+[2026-09-24T14:55:11] [EXECUTING] Running test: TEST_CAN_CONTROLLER_STOP
+[2026-09-24T14:55:11] [HOST] PC -> TARGET: CAN_CONTROLLER_STOP_TEST
+[2026-09-24T14:55:11] [TARGET] Received command: CAN_CONTROLLER_STOP_TEST
+[2026-09-24T14:55:11] Field                       Value
+------------------------------------------------------------
+Action                      stop
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+address                     1
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Stop_20260924_092512.txt
+[2026-09-24T14:55:11] [RESULT] Status: PASS
+[2026-09-24T14:55:11] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Stop_20260924_092512.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Stop_20260924_092512.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:55:14
+================================================================================
+
+[2026-09-24T14:55:19] [INFO] Sending stop command to target...
+[2026-09-24T14:55:19] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T14:55:19] [TARGET] Received command: STOP_QTP
+[2026-09-24T14:55:19] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T14:55:19] [QTP] Target stopped.
+[2026-09-24T14:55:19] [INFO] Exiting test mode...
+[2026-09-24T14:55:19] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 14:55:19
+
+STATISTICS:
+-----------
+Total Tests Executed: 5
+Passed: 5
+Failed: 0
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 100.00%
+
+DETAILED RESULTS:
+-----------------
+Test #4: TC-04 CAN Controller Node Start all
+  Status: PASS | Expected: YES
+
+Test #5: TC-04 CAN Controller Node Stop All
+  Status: PASS | Expected: YES
+
+Test #6: TC-04 CAN Controller Node Set All
+  Status: PASS | Expected: YES
+
+Test #7: TC-04 CAN Controller Node Start
+  Status: PASS | Expected: YES
+
+Test #8: TC-04 CAN Controller Node Stop
+  Status: PASS | Expected: YES
+
+================================================================================

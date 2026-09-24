@@ -1,0 +1,61 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 16:21:18
+================================================================================
+
+[2026-09-24T16:21:18] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T16:21:18] [QTP] Connected to target
+[2026-09-24T16:21:18] [HOST] PC -> TARGET: PING
+[2026-09-24T16:21:18] [TARGET] Received command: PING
+[2026-09-24T16:21:18] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #9: TC-05 RFID Verification
+Command: TEST_RFID
+Started: 2026-09-24 16:21:21
+--------------------------------------------------------------------------------
+[2026-09-24T16:21:22] [EXECUTING] Running test: TEST_RFID
+[2026-09-24T16:21:22] [HOST] PC -> TARGET: RFID_TEST
+[2026-09-24T16:21:23] [TARGET] Received command: RFID_TEST
+[2026-09-24T16:21:23] Card Serial Number  33 80 AD 0D
+Detected Attempt    1
+[2026-09-24T16:21:23] [RESULT] Status: PASS
+[2026-09-24T16:21:23] [RESULT] Details: Target full log saved: /home/root/TC_05_RFID_Verification_20260924_105123.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_05_RFID_Verification_20260924_105123.txt
+Working as Expected: YES
+Completed: 2026-09-24 16:23:13
+================================================================================
+
+[2026-09-24T16:23:35] [INFO] Sending stop command to target...
+[2026-09-24T16:23:35] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T16:23:35] [TARGET] Received command: STOP_QTP
+[2026-09-24T16:23:35] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T16:23:35] [QTP] Target stopped.
+[2026-09-24T16:23:35] [INFO] Exiting test mode...
+[2026-09-24T16:23:35] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 16:23:35
+
+STATISTICS:
+-----------
+Total Tests Executed: 1
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 100.00%
+
+DETAILED RESULTS:
+-----------------
+Test #9: TC-05 RFID Verification
+  Status: PASS | Expected: YES
+
+================================================================================

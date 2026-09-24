@@ -1,0 +1,82 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 13:25:21
+================================================================================
+
+[2026-09-24T13:25:21] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T13:25:21] [QTP] Connected to target
+[2026-09-24T13:25:21] [HOST] PC -> TARGET: PING
+[2026-09-24T13:25:21] [TARGET] Received command: PING
+[2026-09-24T13:25:21] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #6: TC-04 CAN Controller Node Set All
+Command: TEST_CAN_CONTROLLER_SET_ALL
+Started: 2026-09-24 13:25:26
+--------------------------------------------------------------------------------
+[2026-09-24T13:25:36] [EXECUTING] Running test: TEST_CAN_CONTROLLER_SET_ALL
+[2026-09-24T13:25:36] [HOST] PC -> TARGET: CAN_CONTROLLER_SET_ALL_TEST
+[2026-09-24T13:25:37] [TARGET] Received command: CAN_CONTROLLER_SET_ALL_TEST
+[2026-09-24T13:25:37] Field                       Value
+------------------------------------------------------------
+Action                      set_all
+CAN Channel                 mcu_mcan0
+Bitrate                     125000
+current                     41.0
+group                       1
+voltage                     500.0
+Target Log                  /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_075538.txt
+[2026-09-24T13:25:37] [RESULT] Status: PASS
+[2026-09-24T13:25:37] [RESULT] Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_075538.txt
+
+Result: PASS
+Details: Target full log saved: /home/root/TC_04_CAN_Controller_Node_Set_All_20260924_075538.txt
+Working as Expected: YES
+Completed: 2026-09-24 14:49:56
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #6: TC-04 CAN Controller Node Set All
+Command: TEST_CAN_CONTROLLER_SET_ALL
+Started: 2026-09-24 14:49:59
+--------------------------------------------------------------------------------
+[2026-09-24T14:50:02] [EXECUTING] Running test: TEST_CAN_CONTROLLER_SET_ALL
+[2026-09-24T14:50:02] [HOST] PC -> TARGET: CAN_CONTROLLER_SET_ALL_TEST
+[2026-09-24T14:50:02] [QTP] CAN_CONTROLLER_SET_ALL_TEST: ERROR - [WinError 10054] An existing connection was forcibly closed by the remote host
+
+Result: ABORTED
+Details: [WinError 10054] An existing connection was forcibly closed by the remote host
+Working as Expected: NO
+Completed: 2026-09-24 14:50:02
+================================================================================
+
+[2026-09-24T14:50:02] [QTP] Error: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-09-24T14:50:02] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 14:50:02
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 1
+
+Pass Rate: 50.00%
+
+DETAILED RESULTS:
+-----------------
+Test #6: TC-04 CAN Controller Node Set All
+  Status: PASS | Expected: YES
+
+Test #6: TC-04 CAN Controller Node Set All
+  Status: ABORTED | Expected: NO
+
+================================================================================

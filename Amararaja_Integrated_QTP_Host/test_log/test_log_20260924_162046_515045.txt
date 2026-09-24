@@ -1,0 +1,52 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 16:20:46
+================================================================================
+
+[2026-09-24T16:20:46] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T16:20:46] [QTP] Connected to target
+[2026-09-24T16:20:46] [HOST] PC -> TARGET: PING
+[2026-09-24T16:20:46] [TARGET] Received command: PING
+[2026-09-24T16:20:46] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #9: TC-05 RFID Verification
+Command: TEST_RFID
+Started: 2026-09-24 16:20:49
+--------------------------------------------------------------------------------
+[2026-09-24T16:20:52] [EXECUTING] Running test: TEST_RFID
+[2026-09-24T16:20:52] [HOST] PC -> TARGET: RFID_TEST
+[2026-09-24T16:21:02] [QTP] RFID_TEST: ERROR - timed out
+
+Result: ABORTED
+Details: timed out
+Working as Expected: NO
+Completed: 2026-09-24 16:21:02
+================================================================================
+
+[2026-09-24T16:21:02] [QTP] Error: timed out
+[2026-09-24T16:21:02] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 16:21:02
+
+STATISTICS:
+-----------
+Total Tests Executed: 1
+Passed: 0
+Failed: 0
+Skipped: 0
+Aborted: 1
+
+Pass Rate: 0.00%
+
+DETAILED RESULTS:
+-----------------
+Test #9: TC-05 RFID Verification
+  Status: ABORTED | Expected: NO
+
+================================================================================

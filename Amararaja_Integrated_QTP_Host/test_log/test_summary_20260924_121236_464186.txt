@@ -1,0 +1,25 @@
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 12:20:06
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 0
+Failed: 2
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 0.00%
+
+DETAILED RESULTS:
+-----------------
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: FAIL | Expected: NO
+
+Test #3: TC-03 EDC 2150 DC Energy Meter
+  Status: FAIL | Expected: NO
+
+================================================================================

@@ -1,0 +1,83 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 12:20:15
+================================================================================
+
+[2026-09-24T12:20:15] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T12:20:15] [QTP] Connected to target
+[2026-09-24T12:20:15] [HOST] PC -> TARGET: PING
+[2026-09-24T12:20:15] [TARGET] Received command: PING
+[2026-09-24T12:20:15] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #3: TC-03 EDC 2150 DC Energy Meter
+Command: TEST_EDC2150
+Started: 2026-09-24 12:20:18
+--------------------------------------------------------------------------------
+[2026-09-24T12:20:43] [EXECUTING] Running test: TEST_EDC2150
+[2026-09-24T12:20:43] [HOST] PC -> TARGET: EDC2150_TEST
+[2026-09-24T12:20:46] [TARGET] Received command: EDC2150_TEST
+[2026-09-24T12:20:46] Parameter                      StartAddr        RawFloat          Scaled  Available?
+--------------------------------------------------------------------------------------------
+Voltage (V)                         4100              --              --  yes
+Current CH1 (A)                     4102              --              --  yes
+Power CH1 (W)                       4104              --              --  yes
+Energy Import CH1 (kWh->Wh)         4106              --              --  yes
+Energy Export CH1 (kWh->Wh)         4112              --              --  yes
+Reactive Power (VAR)                   0              --              --  N/A (not in YAML)
+Frequency (Hz)                         0              --              --  N/A (not in YAML)
+[2026-09-24T12:20:46] [RESULT] Status: FAIL
+[2026-09-24T12:20:46] [RESULT] Details:
+Target full log saved: /home/root/TC_03_EDC2150_DC_Energy_Meter_20260924_065044.txt
+
+Failures:
+- Voltage (V): No response / timeout reading start_addr 4100
+- Current CH1 (A): No response / timeout reading start_addr 4102
+- Power CH1 (W): No response / timeout reading start_addr 4104
+- Energy Import CH1 (kWh->Wh): No response / timeout reading start_addr 4106
+- Energy Export CH1 (kWh->Wh): No response / timeout reading start_addr 4112
+
+Result: FAIL
+Details: Target full log saved: /home/root/TC_03_EDC2150_DC_Energy_Meter_20260924_065044.txt
+
+Failures:
+- Voltage (V): No response / timeout reading start_addr 4100
+- Current CH1 (A): No response / timeout reading start_addr 4102
+- Power CH1 (W): No response / timeout reading start_addr 4104
+- Energy Import CH1 (kWh->Wh): No response / timeout reading start_addr 4106
+- Energy Export CH1 (kWh->Wh): No response / timeout reading start_addr 4112
+Working as Expected: NO
+Completed: 2026-09-24 12:25:54
+================================================================================
+
+[2026-09-24T12:25:54] [INFO] Sending stop command to target...
+[2026-09-24T12:25:54] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T12:26:01] [TARGET] Received command: STOP_QTP
+[2026-09-24T12:26:01] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T12:26:01] [QTP] Target stopped.
+[2026-09-24T12:26:01] [INFO] Exiting test mode...
+[2026-09-24T12:26:01] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 12:26:01
+
+STATISTICS:
+-----------
+Total Tests Executed: 1
+Passed: 0
+Failed: 1
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 0.00%
+
+DETAILED RESULTS:
+-----------------
+Test #3: TC-03 EDC 2150 DC Energy Meter
+  Status: FAIL | Expected: NO
+
+================================================================================

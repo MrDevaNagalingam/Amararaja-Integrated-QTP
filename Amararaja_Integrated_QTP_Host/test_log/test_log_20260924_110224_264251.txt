@@ -1,0 +1,84 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 11:02:24
+================================================================================
+
+[2026-09-24T11:02:24] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T11:02:24] [QTP] Connected to target
+[2026-09-24T11:02:24] [HOST] PC -> TARGET: PING
+[2026-09-24T11:02:24] [TARGET] Received command: PING
+[2026-09-24T11:02:24] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:02:26
+--------------------------------------------------------------------------------
+[2026-09-24T11:02:26] [INFO] Reads all configured Selec EM4M Modbus RTU registers and checks CRC plus confirmed voltage references.
+[2026-09-24T11:03:09] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:03:09] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:03:09] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:03:09] [QTP] SELEC_EM4M_TEST: ERROR - [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+[2026-09-24T11:03:09] [RESULT] Status: ERROR
+[2026-09-24T11:03:09] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:03:21
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:03:23
+--------------------------------------------------------------------------------
+[2026-09-24T11:03:23] [INFO] Reads all configured Selec EM4M Modbus RTU registers and checks CRC plus confirmed voltage references.
+[2026-09-24T11:03:25] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:03:25] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:03:25] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:03:25] [QTP] SELEC_EM4M_TEST: ERROR - [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+[2026-09-24T11:03:25] [RESULT] Status: ERROR
+[2026-09-24T11:03:25] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:03:45
+================================================================================
+
+[2026-09-24T11:03:46] [INFO] Sending stop command to target...
+[2026-09-24T11:03:46] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T11:03:46] [TARGET] Received command: STOP_QTP
+[2026-09-24T11:03:46] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T11:03:46] [QTP] Target stopped.
+[2026-09-24T11:03:46] [INFO] Exiting test mode...
+[2026-09-24T11:03:46] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 11:03:46
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 0
+Failed: 0
+Skipped: 0
+Aborted: 2
+
+Pass Rate: 0.00%
+
+DETAILED RESULTS:
+-----------------
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+================================================================================

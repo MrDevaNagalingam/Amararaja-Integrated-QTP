@@ -1,0 +1,28 @@
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 15:20:19
+
+STATISTICS:
+-----------
+Total Tests Executed: 3
+Passed: 3
+Failed: 0
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 100.00%
+
+DETAILED RESULTS:
+-----------------
+Test #4: TC-04 CAN Controller Node Start all
+  Status: PASS | Expected: YES
+
+Test #4: TC-04 CAN Controller Node Start all
+  Status: PASS | Expected: YES
+
+Test #5: TC-04 CAN Controller Node Stop All
+  Status: PASS | Expected: YES
+
+================================================================================

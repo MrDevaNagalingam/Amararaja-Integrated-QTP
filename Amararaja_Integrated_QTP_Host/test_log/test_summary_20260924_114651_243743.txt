@@ -1,0 +1,28 @@
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 11:47:09
+
+STATISTICS:
+-----------
+Total Tests Executed: 3
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 2
+
+Pass Rate: 33.33%
+
+DETAILED RESULTS:
+-----------------
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+Test #3: TC-03 EDC 2150 DC Energy Meter
+  Status: ERROR | Expected: NO
+
+================================================================================

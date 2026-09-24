@@ -1,0 +1,83 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 11:21:01
+================================================================================
+
+[2026-09-24T11:21:01] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T11:21:01] [QTP] Connected to target
+[2026-09-24T11:21:01] [HOST] PC -> TARGET: PING
+[2026-09-24T11:21:01] [TARGET] Received command: PING
+[2026-09-24T11:21:01] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:21:02
+--------------------------------------------------------------------------------
+[2026-09-24T11:21:06] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:21:06] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:21:06] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:21:06] [QTP] SELEC_EM4M_TEST: ERROR - [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+[2026-09-24T11:21:06] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+[2026-09-24T11:21:06] [RESULT] Status: ERROR
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:22:13
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-24 11:22:17
+--------------------------------------------------------------------------------
+[2026-09-24T11:22:17] [INFO] Checks the TCP command/response connection to the target.
+[2026-09-24T11:22:17] [EXECUTING] Running test: TEST_PING
+[2026-09-24T11:22:17] [HOST] PC -> TARGET: PING_TEST
+[2026-09-24T11:22:17] [TARGET] Received command: PING_TEST
+[2026-09-24T11:22:17] [QTP] PING_TEST: PASS - PONG - target received command
+[2026-09-24T11:22:17] [RESULT] Details: PONG - target received command
+[2026-09-24T11:22:17] [RESULT] Status: PASS
+
+Result: PASS
+Details: PONG - target received command
+Working as Expected: YES
+Completed: 2026-09-24 11:22:31
+================================================================================
+
+[2026-09-24T11:22:32] [INFO] Sending stop command to target...
+[2026-09-24T11:22:32] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T11:22:32] [TARGET] Received command: STOP_QTP
+[2026-09-24T11:22:32] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T11:22:32] [QTP] Target stopped.
+[2026-09-24T11:22:32] [INFO] Exiting test mode...
+[2026-09-24T11:22:32] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 11:22:32
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 1
+
+Pass Rate: 50.00%
+
+DETAILED RESULTS:
+-----------------
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+================================================================================

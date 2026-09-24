@@ -1,0 +1,101 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 11:46:51
+================================================================================
+
+[2026-09-24T11:46:51] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T11:46:51] [QTP] Connected to target
+[2026-09-24T11:46:51] [HOST] PC -> TARGET: PING
+[2026-09-24T11:46:51] [TARGET] Received command: PING
+[2026-09-24T11:46:51] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-24 11:46:54
+--------------------------------------------------------------------------------
+[2026-09-24T11:46:54] [EXECUTING] Running test: TEST_PING
+[2026-09-24T11:46:54] [HOST] PC -> TARGET: PING_TEST
+[2026-09-24T11:46:54] [TARGET] Received command: PING_TEST
+[2026-09-24T11:46:54] [RESULT] Status: PASS
+[2026-09-24T11:46:54] [RESULT] Details: PONG - target received command
+
+Result: PASS
+Details: PONG - target received command
+Working as Expected: YES
+Completed: 2026-09-24 11:46:57
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:46:57
+--------------------------------------------------------------------------------
+[2026-09-24T11:46:59] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:46:59] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:46:59] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:46:59] [RESULT] Status: ERROR
+[2026-09-24T11:46:59] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:47:01
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #3: TC-03 EDC 2150 DC Energy Meter
+Command: TEST_EDC2150
+Started: 2026-09-24 11:47:02
+--------------------------------------------------------------------------------
+[2026-09-24T11:47:05] [EXECUTING] Running test: TEST_EDC2150
+[2026-09-24T11:47:05] [HOST] PC -> TARGET: EDC2150_TEST
+[2026-09-24T11:47:05] [TARGET] Received command: EDC2150_TEST
+[2026-09-24T11:47:05] [RESULT] Status: ERROR
+[2026-09-24T11:47:05] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB1: [Errno 2] No such file or directory: '/dev/ttyCH9344USB1'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB1: [Errno 2] No such file or directory: '/dev/ttyCH9344USB1'
+Working as Expected: NO
+Completed: 2026-09-24 11:47:07
+================================================================================
+
+[2026-09-24T11:47:09] [INFO] Sending stop command to target...
+[2026-09-24T11:47:09] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T11:47:09] [TARGET] Received command: STOP_QTP
+[2026-09-24T11:47:09] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T11:47:09] [QTP] Target stopped.
+[2026-09-24T11:47:09] [INFO] Exiting test mode...
+[2026-09-24T11:47:09] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 11:47:09
+
+STATISTICS:
+-----------
+Total Tests Executed: 3
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 2
+
+Pass Rate: 33.33%
+
+DETAILED RESULTS:
+-----------------
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+Test #3: TC-03 EDC 2150 DC Energy Meter
+  Status: ERROR | Expected: NO
+
+================================================================================

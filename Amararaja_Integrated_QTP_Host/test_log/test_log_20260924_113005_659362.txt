@@ -1,0 +1,122 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 11:30:05
+================================================================================
+
+[2026-09-24T11:30:05] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T11:30:05] [QTP] Connected to target
+[2026-09-24T11:30:05] [HOST] PC -> TARGET: PING
+[2026-09-24T11:30:05] [TARGET] Received command: PING
+[2026-09-24T11:30:05] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-24 11:30:06
+--------------------------------------------------------------------------------
+[2026-09-24T11:30:06] [EXECUTING] Running test: TEST_PING
+[2026-09-24T11:30:06] [HOST] PC -> TARGET: PING_TEST
+[2026-09-24T11:30:06] [TARGET] Received command: PING_TEST
+[2026-09-24T11:30:06] [RESULT] Status: PASS
+[2026-09-24T11:30:06] [RESULT] Details: PONG - target received command
+
+Result: PASS
+Details: PONG - target received command
+Working as Expected: YES
+Completed: 2026-09-24 11:30:12
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:30:13
+--------------------------------------------------------------------------------
+[2026-09-24T11:30:15] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:30:15] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:30:15] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:30:15] [RESULT] Status: ERROR
+[2026-09-24T11:30:15] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:30:18
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-24 11:30:20
+--------------------------------------------------------------------------------
+[2026-09-24T11:30:20] [EXECUTING] Running test: TEST_PING
+[2026-09-24T11:30:20] [HOST] PC -> TARGET: PING_TEST
+[2026-09-24T11:30:20] [TARGET] Received command: PING_TEST
+[2026-09-24T11:30:20] [RESULT] Status: PASS
+[2026-09-24T11:30:20] [RESULT] Details: PONG - target received command
+
+Result: PASS
+Details: PONG - target received command
+Working as Expected: YES
+Completed: 2026-09-24 11:30:22
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 11:30:31
+--------------------------------------------------------------------------------
+[2026-09-24T11:30:32] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T11:30:32] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T11:30:32] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T11:30:33] [RESULT] Status: ERROR
+[2026-09-24T11:30:33] [RESULT] Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+
+Result: ERROR
+Details: [Errno 2] could not open port /dev/ttyCH9344USB4: [Errno 2] No such file or directory: '/dev/ttyCH9344USB4'
+Working as Expected: NO
+Completed: 2026-09-24 11:30:34
+================================================================================
+
+[2026-09-24T11:30:50] [INFO] Sending stop command to target...
+[2026-09-24T11:30:50] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-24T11:30:50] [TARGET] Received command: STOP_QTP
+[2026-09-24T11:30:50] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-24T11:30:50] [QTP] Target stopped.
+[2026-09-24T11:30:50] [INFO] Exiting test mode...
+[2026-09-24T11:30:50] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 11:30:50
+
+STATISTICS:
+-----------
+Total Tests Executed: 4
+Passed: 2
+Failed: 0
+Skipped: 0
+Aborted: 2
+
+Pass Rate: 50.00%
+
+DETAILED RESULTS:
+-----------------
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: ERROR | Expected: NO
+
+================================================================================

@@ -1,0 +1,169 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 12:12:36
+================================================================================
+
+[2026-09-24T12:12:36] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T12:12:36] [QTP] Connected to target
+[2026-09-24T12:12:36] [HOST] PC -> TARGET: PING
+[2026-09-24T12:12:36] [TARGET] Received command: PING
+[2026-09-24T12:12:36] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 12:12:39
+--------------------------------------------------------------------------------
+[2026-09-24T12:12:40] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T12:12:40] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T12:12:46] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T12:12:46] Parameter                   Addr   Raw(hex)   Raw(dec)        Scaled  Verified?
+--------------------------------------------------------------------------------------------
+Voltage L1                  1000         --         --            --  CONFIRMED
+Voltage L2                  1002         --         --            --  CONFIRMED
+Voltage L3                  1004         --         --            --  CONFIRMED
+Voltage Avg/Total           1006         --         --            --  CONFIRMED
+Current L1                  1016         --         --            --  unconfirmd
+Current L2                  1018         --         --            --  unconfirmd
+Current L3                  1020         --         --            --  unconfirmd
+Current Total               1022         --         --            --  unconfirmd
+Power L1                    1036         --         --            --  unconfirmd
+Power L2                    1038         --         --            --  unconfirmd
+Power L3 / Total            1040         --         --            --  unconfirmd
+Reactive Power Total        1042         --         --            --  unconfirmd
+Frequency                   1056         --         --            --  unconfirmd
+Energy Import L1 / Total    1076         --         --            --  unconfirmd
+Energy Import L2            1078         --         --            --  unconfirmd
+Energy Import L3            1080         --         --            --  unconfirmd
+Energy Export L1 / Total    1082         --         --            --  unconfirmd
+Energy Export L2            1084         --         --            --  unconfirmd
+Energy Export L3            1086         --         --            --  unconfirmd
+[2026-09-24T12:12:46] [RESULT] Status: FAIL
+[2026-09-24T12:12:46] [RESULT] Details:
+Target full log saved: /home/root/TC_02_Selec_EM4M_AC_Energy_Meter_20260924_064241.txt
+
+Failures:
+- Voltage L1: No response / timeout reading addr 1000
+- Voltage L2: No response / timeout reading addr 1002
+- Voltage L3: No response / timeout reading addr 1004
+- Voltage Avg/Total: No response / timeout reading addr 1006
+- Current L1: No response / timeout reading addr 1016
+- Current L2: No response / timeout reading addr 1018
+- Current L3: No response / timeout reading addr 1020
+- Current Total: No response / timeout reading addr 1022
+- Power L1: No response / timeout reading addr 1036
+- Power L2: No response / timeout reading addr 1038
+- Power L3 / Total: No response / timeout reading addr 1040
+- Reactive Power Total: No response / timeout reading addr 1042
+- Frequency: No response / timeout reading addr 1056
+- Energy Import L1 / Total: No response / timeout reading addr 1076
+- Energy Import L2: No response / timeout reading addr 1078
+- Energy Import L3: No response / timeout reading addr 1080
+- Energy Export L1 / Total: No response / timeout reading addr 1082
+- Energy Export L2: No response / timeout reading addr 1084
+- Energy Export L3: No response / timeout reading addr 1086
+
+Result: FAIL
+Details: Target full log saved: /home/root/TC_02_Selec_EM4M_AC_Energy_Meter_20260924_064241.txt
+
+Failures:
+- Voltage L1: No response / timeout reading addr 1000
+- Voltage L2: No response / timeout reading addr 1002
+- Voltage L3: No response / timeout reading addr 1004
+- Voltage Avg/Total: No response / timeout reading addr 1006
+- Current L1: No response / timeout reading addr 1016
+- Current L2: No response / timeout reading addr 1018
+- Current L3: No response / timeout reading addr 1020
+- Current Total: No response / timeout reading addr 1022
+- Power L1: No response / timeout reading addr 1036
+- Power L2: No response / timeout reading addr 1038
+- Power L3 / Total: No response / timeout reading addr 1040
+- Reactive Power Total: No response / timeout reading addr 1042
+- Frequency: No response / timeout reading addr 1056
+- Energy Import L1 / Total: No response / timeout reading addr 1076
+- Energy Import L2: No response / timeout reading addr 1078
+- Energy Import L3: No response / timeout reading addr 1080
+- Energy Export L1 / Total: No response / timeout reading addr 1082
+- Energy Export L2: No response / timeout reading addr 1084
+- Energy Export L3: No response / timeout reading addr 1086
+Working as Expected: NO
+Completed: 2026-09-24 12:13:55
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #3: TC-03 EDC 2150 DC Energy Meter
+Command: TEST_EDC2150
+Started: 2026-09-24 12:14:00
+--------------------------------------------------------------------------------
+[2026-09-24T12:14:03] [EXECUTING] Running test: TEST_EDC2150
+[2026-09-24T12:14:03] [HOST] PC -> TARGET: EDC2150_TEST
+[2026-09-24T12:14:06] [TARGET] Received command: EDC2150_TEST
+[2026-09-24T12:14:06] Parameter                      StartAddr        RawFloat          Scaled  Available?
+--------------------------------------------------------------------------------------------
+Voltage (V)                         4100              --              --  yes
+Current CH1 (A)                     4102              --              --  yes
+Power CH1 (W)                       4104              --              --  yes
+Energy Import CH1 (kWh->Wh)         4106              --              --  yes
+Energy Export CH1 (kWh->Wh)         4112              --              --  yes
+Reactive Power (VAR)                   0              --              --  N/A (not in YAML)
+Frequency (Hz)                         0              --              --  N/A (not in YAML)
+[2026-09-24T12:14:06] [RESULT] Status: FAIL
+[2026-09-24T12:14:06] [RESULT] Details:
+Target full log saved: /home/root/TC_03_EDC2150_DC_Energy_Meter_20260924_064404.txt
+
+Failures:
+- Voltage (V): No response / timeout reading start_addr 4100
+- Current CH1 (A): No response / timeout reading start_addr 4102
+- Power CH1 (W): No response / timeout reading start_addr 4104
+- Energy Import CH1 (kWh->Wh): No response / timeout reading start_addr 4106
+- Energy Export CH1 (kWh->Wh): No response / timeout reading start_addr 4112
+
+Result: FAIL
+Details: Target full log saved: /home/root/TC_03_EDC2150_DC_Energy_Meter_20260924_064404.txt
+
+Failures:
+- Voltage (V): No response / timeout reading start_addr 4100
+- Current CH1 (A): No response / timeout reading start_addr 4102
+- Power CH1 (W): No response / timeout reading start_addr 4104
+- Energy Import CH1 (kWh->Wh): No response / timeout reading start_addr 4106
+- Energy Export CH1 (kWh->Wh): No response / timeout reading start_addr 4112
+Working as Expected: NO
+Completed: 2026-09-24 12:17:08
+================================================================================
+
+
+--------------------------------------------------------------------------------
+TEST #3: TC-03 EDC 2150 DC Energy Meter
+Command: TEST_EDC2150
+Started: 2026-09-24 12:19:34
+--------------------------------------------------------------------------------
+[2026-09-24T12:20:06] [QTP] Error: invalid literal for int() with base 10: '9600]'
+[2026-09-24T12:20:06] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-24 12:20:06
+
+STATISTICS:
+-----------
+Total Tests Executed: 2
+Passed: 0
+Failed: 2
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 0.00%
+
+DETAILED RESULTS:
+-----------------
+Test #2: TC-02 Selec EM4M AC Energy Meter
+  Status: FAIL | Expected: NO
+
+Test #3: TC-03 EDC 2150 DC Energy Meter
+  Status: FAIL | Expected: NO
+
+================================================================================

@@ -1,6 +1,6 @@
 # Amararaja Integrated QTP
 
-Python TCP host/target project based on the supplied socket examples and project skeleton. Uses the BOSCH reference's `[QTP]`, `[HOST]`, and `[TARGET]` console prefixes. Python 3.8+. TC-02 live Selec EM4M testing requires `pyserial` on the target.
+Python TCP host/target project based on the supplied socket examples and project skeleton. Uses the BOSCH reference's `[QTP]`, `[HOST]`, and `[TARGET]` console prefixes. Python 3.8+. TC-02 and TC-03 live Modbus meter testing require `pyserial` on the target.
 
 ## Run
 
@@ -30,6 +30,13 @@ The host automatically sends `PING` after connection as a startup transport chec
 | --- | --- |
 | `1` or `ping` | Run TC-01 Ping test over TCP and record the result |
 | `2` | Run TC-02 Selec EM4M AC Energy Meter live Modbus read test and record the result |
+| `3` | Run TC-03 EDC 2150 DC Energy Meter live Modbus read test and record the result |
+| `4` | Run TC-04 CAN Controller Node Start all |
+| `5` | Run TC-04 CAN Controller Node Stop All |
+| `6` | Run TC-04 CAN Controller Node Set All |
+| `7` | Run TC-04 CAN Controller Node Start |
+| `8` | Run TC-04 CAN Controller Node Stop |
+| `9` | Run TC-05 RFID Verification |
 | `echo hello` | Target returns `hello` |
 | `q` | Send STOP_QTP, await acknowledgment, exit host and target |
 | `exit` or `0` | Same as q |
@@ -37,7 +44,15 @@ The host automatically sends `PING` after connection as a startup transport chec
 
 The target needs no keyboard input. STOP_QTP stops the target Python server, not the board/OS. Restart the target script before a new session. Ctrl+C/EOF at the host prompt also requests STOP_QTP. A network failure or an interruption during a request does not confirm remote shutdown. An ordinary client disconnect leaves the target listening for reconnection.
 
-TC-02 copies the standalone Selec EM4M Modbus code into target `selec_EM4M.py` and runs the live per-register Modbus RTU reads from the QTP menu. The test passes when all configured parameters return valid responses with valid CRC and the confirmed voltage values match these references within tolerance: L1 228.930 V, L2 229.090 V, L3 229.040 V, Avg/Total 229.020 V. Current, power, reactive power, frequency, and energy values are logged as valid responses but remain unconfirmed until checked against known reference inputs. Add future visible tests to the host `TESTS` table, translate them in `command_handler.py`, and register target-side implementations in dispatcher `COMMANDS`. Current commands run synchronously and have a 10-second host response deadline; long-running tests need cancellation and timeout design before integration.
+TC-02 copies the standalone Selec EM4M Modbus code into target `selec_EM4M.py` and runs the live per-register Modbus RTU reads from the QTP menu. Before communication starts, the host asks whether to use `/dev/ttyCH9344USB4 @ 9600 8N1, slave ID 1` or enter a custom port, baud rate, and slave ID. The PC result displays the parameter table with address, raw hex, raw decimal, scaled value, and verified status. The target saves the full TX/RX debug log at `/home/root/TC_02_Selec_EM4M_AC_Energy_Meter_<date>.txt`. The test passes when all configured parameters return valid responses with valid CRC and the confirmed voltage values match these references within tolerance: L1 228.930 V, L2 229.090 V, L3 229.040 V, Avg/Total 229.020 V. Current, power, reactive power, frequency, and energy values are logged as valid responses but remain unconfirmed until checked against known reference inputs.
+
+TC-03 copies the standalone EDC2150 DC Energy Meter code into target `edc2150.py` and runs live per-parameter Modbus RTU FC03 reads. Before communication starts, the host asks whether to use `/dev/ttyCH9344USB1 @ 9600 8N1, slave ID 2` or enter a custom port, baud rate, and slave ID. The PC result displays the EDC2150 parameter table with start address, raw float, scaled value, and availability. The target saves the full TX/RX debug log at `/home/root/TC_03_EDC2150_DC_Energy_Meter_<date>.txt`. The test passes when all available configured parameters return valid responses with valid CRC; reactive power and frequency are marked not available because their YAML start register is 0.
+
+TC-04 copies the CAN controller support into target `can_setup.py`, `can_controller_node.py`, `can_controller_qtp.py`, and `tonhe_can_messages_6modules.csv`. The QTP entries send controller commands over SocketCAN using defaults from target `config.py`: `mcu_mcan0`, `125000` bit/s, group `1`, voltage `500.0`, current `41.0`, module address `1`. Each QTP CAN action configures the CAN interface and sends the timing command `C_M_3` once before the selected command, matching the standalone controller startup behavior. The copied controller shell commands remain available in `can_controller_node.py` for future use, including `disable_gun`, `dual_gun`, `exit`, `gun`, `help`, `only_rx`, `only_tx`, `quiet`, `set_address`, `set_address_mode`, `set_input_mode`, `show_both`, `status`, `stop`, and `verbose`. Target TX/RX command logs are saved under `/home/root/TC_04_CAN_Controller_..._<date>.txt`.
+
+TC-05 runs RFID verification inside target `tests.py`. Before communication starts, the host asks whether to use `/dev/ttyUSB0 @ 115200 8N1` or enter a custom port and baud rate. The target sends `02 00 02 34 31 03 06`, reads repeated responses, and passes when a response contains operation status `0x59` with a 4-byte card serial number. Status `0x4E` means no card serial number returned. The PC result displays only the detected card serial number and target log path; no-card responses are kept in the target log only. The target saves the full TX/RX debug log at `/home/root/TC_05_RFID_Verification_<date>.txt`.
+
+Add future visible tests to the host `TESTS` table, translate them in `command_handler.py`, and register target-side implementations in dispatcher `COMMANDS`. Current commands run synchronously and have a 10-second host response deadline; long-running tests need cancellation and timeout design before integration.
 
 ## Logs
 

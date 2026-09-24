@@ -1,0 +1,25 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-24 10:09:19
+================================================================================
+
+[2026-09-24T10:09:19] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-24T10:09:19] [QTP] Connected to target
+[2026-09-24T10:09:19] [HOST] PC -> TARGET: PING
+[2026-09-24T10:09:19] [TARGET] Received command: PING
+[2026-09-24T10:09:19] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #2: TC-02 Selec EM4M AC Energy Meter
+Command: TEST_SELEC_EM4M
+Started: 2026-09-24 10:09:23
+--------------------------------------------------------------------------------
+[2026-09-24T10:09:23] [INFO] Reads all configured Selec EM4M Modbus RTU registers and checks CRC plus confirmed voltage references.
+[2026-09-24T10:09:23] [EXECUTING] Running test: TEST_SELEC_EM4M
+[2026-09-24T10:09:23] [HOST] PC -> TARGET: SELEC_EM4M_TEST
+[2026-09-24T10:09:28] [TARGET] Received command: SELEC_EM4M_TEST
+[2026-09-24T10:09:29] [QTP] SELEC_EM4M_TEST: FAIL - Selec EM4M live Modbus read completed: 0/19 valid CRC responses; confirmed voltages: . Unconfirmed current/power/reactive/frequency/energy values require known reference validation. Failures: Voltage L1: No response / timeout reading addr 1000; Voltage L2: No response / timeout reading addr 1002; Voltage L3: No response / timeout reading addr 1004; Voltage Avg/Total: No response / timeout reading addr 1006; Current L1: No response / timeout reading addr 1016; Current L2: No response / timeout reading addr 1018; Current L3: No response / timeout reading addr 1020; Current Total: No response / timeout reading addr 1022; Power L1: No response / timeout reading addr 1036; Power L2: No response / timeout reading addr 1038; Power L3 / Total: No response / timeout reading addr 1040; Reactive Power Total: No response / timeout reading addr 1042; Frequency: No response / timeout reading addr 1056; Energy Import L1 / Total: No response / timeout reading addr 1076; Energy Import L2: No response / timeout reading addr 1078; Energy Import L3: No response / timeout reading addr 1080; Energy Export L1 / Total: No response / timeout reading addr 1082; Energy Export L2: No response / timeout reading addr 1084; Energy Export L3: No response / timeout reading addr 1086
+[2026-09-24T10:09:29] [RESULT] Status: FAIL
+[2026-09-24T10:09:29] [RESULT] Details: Selec EM4M live Modbus read completed: 0/19 valid CRC responses; confirmed voltages: . Unconfirmed current/power/reactive/frequency/energy values require known reference validation. Failures: Voltage L1: No response / timeout reading addr 1000; Voltage L2: No response / timeout reading addr 1002; Voltage L3: No response / timeout reading addr 1004; Voltage Avg/Total: No response / timeout reading addr 1006; Current L1: No response / timeout reading addr 1016; Current L2: No response / timeout reading addr 1018; Current L3: No response / timeout reading addr 1020; Current Total: No response / timeout reading addr 1022; Power L1: No response / timeout reading addr 1036; Power L2: No response / timeout reading addr 1038; Power L3 / Total: No response / timeout reading addr 1040; Reactive Power Total: No response / timeout reading addr 1042; Frequency: No response / timeout reading addr 1056; Energy Import L1 / Total: No response / timeout reading addr 1076; Energy Import L2: No response / timeout reading addr 1078; Energy Import L3: No response / timeout reading addr 1080; Energy Export L1 / Total: No response / timeout reading addr 1082; Energy Export L2: No response / timeout reading addr 1084; Energy Export L3: No response / timeout reading addr 1086

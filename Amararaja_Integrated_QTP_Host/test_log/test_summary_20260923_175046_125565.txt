@@ -1,0 +1,10 @@
+Amararaja Integrated QTP Command Summary
+
+PING                     PASS
+STOP_QTP                 PASS
+
+Total Commands : 2
+PASS : 2
+FAIL : 0
+ERROR : 0
+NOT_IMPLEMENTED : 0

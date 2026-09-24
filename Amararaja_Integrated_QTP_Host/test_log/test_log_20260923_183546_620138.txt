@@ -1,0 +1,33 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-23 18:35:46
+================================================================================
+
+[2026-09-23T18:35:46] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-23T18:35:46] [QTP] Connected to target
+[2026-09-23T18:35:46] [HOST] PC -> TARGET: PING
+[2026-09-23T18:35:46] [TARGET] Received command: PING
+[2026-09-23T18:35:46] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-23 18:35:47
+--------------------------------------------------------------------------------
+[2026-09-23T18:35:47] [INFO] Checks the TCP command/response connection to the target.
+[2026-09-23T18:35:47] [EXECUTING] Running test: TEST_PING
+[2026-09-23T18:35:47] [HOST] PC -> TARGET: PING_TEST
+[2026-09-23T18:35:47] [TARGET] Received command: PING_TEST
+[2026-09-23T18:35:47] [QTP] PING_TEST: PASS - PONG - target received command
+[2026-09-23T18:35:47] [RESULT] Status: PASS
+[2026-09-23T18:35:47] [RESULT] Details: PONG - target received command
+
+Result: FAIL
+Details: PONG - target received command
+Operator reported test is not working as expected.
+Working as Expected: NO
+Completed: 2026-09-23 18:35:49
+================================================================================
+

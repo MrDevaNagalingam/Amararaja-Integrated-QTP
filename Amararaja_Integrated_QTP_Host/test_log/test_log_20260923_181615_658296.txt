@@ -1,0 +1,61 @@
+
+================================================================================
+QTP TEST EXECUTION LOG
+================================================================================
+Session Started: 2026-09-23 18:16:15
+================================================================================
+
+[2026-09-23T18:16:15] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-23T18:16:17] [QTP] Connected to target
+[2026-09-23T18:16:17] [HOST] PC -> TARGET: PING
+[2026-09-23T18:16:17] [TARGET] Received command: PING
+[2026-09-23T18:16:17] [QTP] PING: PASS - PONG - target received command
+
+--------------------------------------------------------------------------------
+TEST #1: TC-01 Ping test
+Command: TEST_PING
+Started: 2026-09-23 18:16:20
+--------------------------------------------------------------------------------
+[2026-09-23T18:16:20] [INFO] Checks the TCP command/response connection to the target.
+[2026-09-23T18:16:20] [EXECUTING] Running test: TEST_PING
+[2026-09-23T18:16:20] [HOST] PC -> TARGET: PING_TEST
+[2026-09-23T18:16:20] [TARGET] Received command: PING_TEST
+[2026-09-23T18:16:20] [QTP] PING_TEST: PASS - PONG - target received command
+[2026-09-23T18:16:20] [RESULT] Status: PASS
+[2026-09-23T18:16:20] [RESULT] Details: PONG - target received command
+
+Result: PASS
+Details: PONG - target received command
+Working as Expected: YES
+Completed: 2026-09-23 18:19:49
+================================================================================
+
+[2026-09-23T18:21:04] [INFO] Sending stop command to target...
+[2026-09-23T18:21:04] [HOST] PC -> TARGET: STOP_QTP
+[2026-09-23T18:21:04] [TARGET] Received command: STOP_QTP
+[2026-09-23T18:21:04] [QTP] STOP_QTP: PASS - Stop acknowledged; target shutting down
+[2026-09-23T18:21:04] [QTP] Target stopped.
+[2026-09-23T18:21:04] [INFO] Exiting test mode...
+[2026-09-23T18:21:04] [QTP] Shutdown complete
+
+================================================================================
+TEST EXECUTION SUMMARY
+================================================================================
+Session Completed: 2026-09-23 18:21:04
+
+STATISTICS:
+-----------
+Total Tests Executed: 1
+Passed: 1
+Failed: 0
+Skipped: 0
+Aborted: 0
+
+Pass Rate: 100.00%
+
+DETAILED RESULTS:
+-----------------
+Test #1: TC-01 Ping test
+  Status: PASS | Expected: YES
+
+================================================================================

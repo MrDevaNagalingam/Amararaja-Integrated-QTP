@@ -1,0 +1,8 @@
+Amararaja Integrated QTP Command Summary
+
+
+Total Commands : 0
+PASS : 0
+FAIL : 0
+ERROR : 0
+NOT_IMPLEMENTED : 0

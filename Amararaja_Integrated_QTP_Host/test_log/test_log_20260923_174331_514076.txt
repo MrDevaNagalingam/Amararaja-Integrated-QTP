@@ -1,0 +1,4 @@
+[2026-09-23T17:43:31] [QTP] Connecting to 192.168.11.69:5000...
+[2026-09-23T17:43:33] [QTP] Error: [WinError 10061] No connection could be made because the target machine actively refused it
+[2026-09-23T17:43:33] [QTP] Shutdown complete
+[2026-09-23T17:43:33] [QTP] Summary: C:\Deva_Workspace\Training\Amararaja\QTP\Amararaja-Integrated-QTP\Amararaja_Integrated_QTP_Host\test_log\test_summary_20260923_174331_514076.txt

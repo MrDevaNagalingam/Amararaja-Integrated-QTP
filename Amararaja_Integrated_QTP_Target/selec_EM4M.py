@@ -30,10 +30,11 @@ Usage:
     python3 read_ac_energymeter_permodel.py --loop --interval 2
 """
 
-import argparse
+import contextlib
+import os
 import struct
-import sys
 import time
+import sys
 from datetime import datetime
 
 try:
@@ -115,7 +116,7 @@ def parse_read_input_registers_response(resp: bytes):
     return slave_id, func_code, byte_count, registers, crc_ok, crc_received, crc_calc
 
 
-def open_serial(port: str, baudrate: int = 9600, timeout: float = 1.0):
+def open_serial(port: str, baudrate: int, timeout: float):
     if serial is None:
         raise RuntimeError("pyserial is required for live Selec EM4M serial reads")
     return serial.Serial(
@@ -232,6 +233,43 @@ REFERENCE_VOLTAGES = {
 }
 
 
+class Tee:
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for stream in self.streams:
+            stream.write(data)
+            stream.flush()
+
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()
+
+
+def make_target_log_path(test_name: str) -> str:
+    safe = "".join(ch if ch.isalnum() else "_" for ch in test_name).strip("_")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    return os.path.join("/home/root", "{}_{}.txt".format(safe, timestamp))
+
+
+def format_parameter_table(rows: list) -> str:
+    lines = [
+        "{:<26}{:>6}  {:>9}  {:>9}  {:>12}  {}".format(
+            "Parameter", "Addr", "Raw(hex)", "Raw(dec)", "Scaled", "Verified?"),
+        "-" * 92,
+    ]
+    for row in rows:
+        raw = row["raw"]
+        raw_hex = "0x{:04X}".format(raw) if raw is not None else "--"
+        raw_dec = str(raw) if raw is not None else "--"
+        scaled = "{:.3f}".format(row["scaled"]) if row["scaled"] is not None else "--"
+        verified = "CONFIRMED" if row["confirmed"] else "unconfirmd"
+        lines.append("{:<26}{:>6}  {:>9}  {:>9}  {:>12}  {}".format(
+            row["name"], row["address"], raw_hex, raw_dec, scaled, verified))
+    return "\n".join(lines)
+
+
 def read_all_parameters(ser, slave_id: int) -> list:
     rows = []
     for name, addr, multiplier, confirmed in PARAMS:
@@ -258,20 +296,29 @@ def read_all_parameters(ser, slave_id: int) -> list:
     return rows
 
 
-def run_qtp_test(port: str = "/dev/ttyCH9344USB4", baudrate: int = 9600,
-                 slave_id: int = 1, timeout: float = 0.3,
-                 voltage_tolerance: float = 1.0) -> dict:
+def run_qtp_test(port: str, baudrate: int, slave_id: int,
+                 timeout: float, voltage_tolerance: float) -> dict:
     """Run the live Selec EM4M Modbus read test for QTP.
 
     PASS requires every configured parameter to return a response with a valid
     CRC. Confirmed voltage parameters must also match the stored reference
     values within voltage_tolerance.
     """
-    ser = open_serial(port, baudrate, timeout)
-    try:
-        rows = read_all_parameters(ser, slave_id)
-    finally:
-        ser.close()
+    log_path = make_target_log_path("TC-02_Selec_EM4M_AC_Energy_Meter")
+    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+    with open(log_path, "w", encoding="utf-8") as log_file:
+        with contextlib.redirect_stdout(Tee(sys.stdout, log_file)):
+            print("Opening serial port {} @ {} 8N1 ...".format(port, baudrate))
+            print("\n########## AC Energy Meter (Selec EM4M) | per-parameter read | slave ID {} ##########".format(slave_id))
+            ser = open_serial(port, baudrate, timeout)
+            try:
+                rows = read_all_parameters(ser, slave_id)
+            finally:
+                ser.close()
+            print("\n" + "=" * 92)
+            print(format_parameter_table(rows))
+            print("=" * 92)
+            print("Target full log saved: {}".format(log_path))
 
     failures = []
     voltage_results = []
@@ -298,27 +345,20 @@ def run_qtp_test(port: str = "/dev/ttyCH9344USB4", baudrate: int = 9600,
                     "{}: {:.3f} V outside {:.3f} V +/- {:.3f} V".format(
                         row["name"], row["scaled"], reference, voltage_tolerance))
 
-    confirmed_summary = ", ".join(
-        "{}={:.3f} V".format(item["name"].replace("Voltage ", "V"), item["measured"])
-        for item in voltage_results
-    )
-    message = (
-        "Selec EM4M live Modbus read completed: {}/{} valid CRC responses; "
-        "confirmed voltages: {voltages}. Unconfirmed current/power/reactive/"
-        "frequency/energy values require known reference validation."
-    ).format(
-        sum(1 for row in rows if row["crc_ok"] and not row["error"]),
-        len(rows),
-        voltages=confirmed_summary,
-    )
+    table = format_parameter_table(rows)
+    message = "Target full log saved: {}".format(log_path)
+    if failures:
+        message += "\n\nFailures:\n" + "\n".join("- " + failure for failure in failures)
     return {
         "status": "PASS" if not failures else "FAIL",
-        "message": message if not failures else message + " Failures: " + "; ".join(failures),
+        "message": message,
         "measurements": {
             "port": port,
             "baudrate": baudrate,
             "slave_id": slave_id,
             "voltage_tolerance": voltage_tolerance,
+            "target_log": log_path,
+            "table": table,
             "rows": rows,
             "voltage_results": voltage_results,
             "failures": failures,
@@ -358,39 +398,3 @@ def run_once(ser, slave_id: int):
           "      Selec_EM4M.yaml and still need the same kind of live\n"
           "      confirmation (known load / known current / known power) before\n"
           "      the values should be trusted.")
-
-
-def main():
-    ap = argparse.ArgumentParser(
-        description="Read AC Energy Meter (Selec EM4M) parameters one register at a time, per Selec_EM4M.yaml"
-    )
-    ap.add_argument("--port", default="/dev/ttyCH9344USB4", help="Serial port (default: /dev/ttyCH9344USB4)")
-    ap.add_argument("--baud", type=int, default=9600, help="Baud rate (default: 9600)")
-    ap.add_argument("--slave", type=int, default=1, help="Slave/Address ID (default: 1)")
-    ap.add_argument("--timeout", type=float, default=1.0, help="Serial read timeout in seconds")
-    ap.add_argument("--loop", action="store_true", help="Continuously poll instead of a single pass")
-    ap.add_argument("--interval", type=float, default=2.0, help="Seconds between polls in --loop mode")
-    args = ap.parse_args()
-
-    print(f"Opening serial port {args.port} @ {args.baud} 8N1 ...")
-    try:
-        ser = open_serial(args.port, args.baud, args.timeout)
-    except Exception as e:
-        print(f"!! Could not open serial port {args.port}: {e}")
-        sys.exit(1)
-
-    try:
-        if args.loop:
-            while True:
-                run_once(ser, args.slave)
-                time.sleep(args.interval)
-        else:
-            run_once(ser, args.slave)
-    except KeyboardInterrupt:
-        print("\nStopped by user.")
-    finally:
-        ser.close()
-
-
-if __name__ == "__main__":
-    main()

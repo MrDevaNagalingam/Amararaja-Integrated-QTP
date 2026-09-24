@@ -1,12 +1,16 @@
 TESTS = {
     "1": ("TC-01 Ping test", "TEST_PING"),
     "2": ("TC-02 Selec EM4M AC Energy Meter", "TEST_SELEC_EM4M"),
+    "3": ("TC-03 EDC 2150 DC Energy Meter", "TEST_EDC2150"),
+    "4": ("TC-04 CAN Controller Node Start all", "TEST_CAN_CONTROLLER_START_ALL"),
+    "5": ("TC-04 CAN Controller Node Stop All", "TEST_CAN_CONTROLLER_STOP_ALL"),
+    "6": ("TC-04 CAN Controller Node Set All", "TEST_CAN_CONTROLLER_SET_ALL"),
+    "7": ("TC-04 CAN Controller Node Start", "TEST_CAN_CONTROLLER_START"),
+    "8": ("TC-04 CAN Controller Node Stop", "TEST_CAN_CONTROLLER_STOP"),
+    "9": ("TC-05 RFID Verification", "TEST_RFID"),
 }
 
-TEST_MESSAGES = {
-    "TEST_PING": "Checks the TCP command/response connection to the target.",
-    "TEST_SELEC_EM4M": "Reads all configured Selec EM4M Modbus RTU registers and checks CRC plus confirmed voltage references.",
-}
+TEST_MESSAGES = {}
 
 
 def display_main_menu():

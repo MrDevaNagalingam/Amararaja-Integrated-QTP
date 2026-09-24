@@ -1,0 +1,378 @@
+MessageName,CAN_ID,DLC,SignalName,StartBit,BitLength,ByteOrder,ValueType,Factor,Offset,Min,Max,Unit,ValueDescription
+M_C_1_Mod1,0x1801a001,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod1,0x1801a001,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod1,0x1801a001,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod1,0x1801a001,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod1,0x1801a001,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod1,0x1801a001,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod1,0x1801a001,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod1,0x1801a001,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod1,0x1801a001,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod1,0x1801a001,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod1,0x1801a001,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod1,0x1801a001,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod1,0x1801a001,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod1,0x1801a001,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod1,0x1801a001,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod1,0x1801a001,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod1,0x1801a001,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod1,0x1801a001,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod1,0x1801a001,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod1,0x1801a001,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod1,0x1801a001,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod1,0x1801a001,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod1,0x1801a001,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod1,0x1801a001,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod1,0x1801a001,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod1,0x1801a001,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod1,0x1801a001,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod1,0x802a001,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod1,0x802a001,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod1,0x180ba001,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod1,0x180ba001,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod1,0x180ba001,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod1,0x180ba001,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod1,0x1c91a001,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod1,0x1c91a001,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod1,0x1c91a001,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod1,0x1c91a001,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod1,0x1c91a001,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod1,0x1c91a001,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod1,0x1c91a001,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod1,0x1c91a001,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod1,0x1c91a001,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod1,0x1c91a001,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod1,0x1c91a001,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod1,0x1c91a001,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod1,0x1c91a001,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod1,0x1c91a001,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod1,0x1c91a001,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod1,0x1c91a001,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod1,0x1c91a001,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod1,0x1c91a001,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod1,0x1c91a001,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod1,0x1c91a001,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+M_C_1_Mod2,0x1801a002,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod2,0x1801a002,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod2,0x1801a002,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod2,0x1801a002,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod2,0x1801a002,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod2,0x1801a002,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod2,0x1801a002,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod2,0x1801a002,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod2,0x1801a002,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod2,0x1801a002,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod2,0x1801a002,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod2,0x1801a002,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod2,0x1801a002,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod2,0x1801a002,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod2,0x1801a002,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod2,0x1801a002,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod2,0x1801a002,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod2,0x1801a002,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod2,0x1801a002,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod2,0x1801a002,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod2,0x1801a002,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod2,0x1801a002,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod2,0x1801a002,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod2,0x1801a002,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod2,0x1801a002,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod2,0x1801a002,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod2,0x1801a002,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod2,0x802a002,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod2,0x802a002,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod2,0x180ba002,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod2,0x180ba002,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod2,0x180ba002,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod2,0x180ba002,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod2,0x1c91a002,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod2,0x1c91a002,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod2,0x1c91a002,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod2,0x1c91a002,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod2,0x1c91a002,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod2,0x1c91a002,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod2,0x1c91a002,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod2,0x1c91a002,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod2,0x1c91a002,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod2,0x1c91a002,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod2,0x1c91a002,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod2,0x1c91a002,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod2,0x1c91a002,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod2,0x1c91a002,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod2,0x1c91a002,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod2,0x1c91a002,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod2,0x1c91a002,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod2,0x1c91a002,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod2,0x1c91a002,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod2,0x1c91a002,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+M_C_1_Mod3,0x1801a003,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod3,0x1801a003,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod3,0x1801a003,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod3,0x1801a003,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod3,0x1801a003,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod3,0x1801a003,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod3,0x1801a003,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod3,0x1801a003,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod3,0x1801a003,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod3,0x1801a003,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod3,0x1801a003,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod3,0x1801a003,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod3,0x1801a003,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod3,0x1801a003,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod3,0x1801a003,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod3,0x1801a003,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod3,0x1801a003,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod3,0x1801a003,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod3,0x1801a003,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod3,0x1801a003,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod3,0x1801a003,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod3,0x1801a003,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod3,0x1801a003,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod3,0x1801a003,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod3,0x1801a003,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod3,0x1801a003,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod3,0x1801a003,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod3,0x802a003,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod3,0x802a003,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod3,0x180ba003,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod3,0x180ba003,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod3,0x180ba003,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod3,0x180ba003,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod3,0x1c91a003,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod3,0x1c91a003,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod3,0x1c91a003,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod3,0x1c91a003,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod3,0x1c91a003,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod3,0x1c91a003,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod3,0x1c91a003,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod3,0x1c91a003,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod3,0x1c91a003,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod3,0x1c91a003,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod3,0x1c91a003,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod3,0x1c91a003,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod3,0x1c91a003,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod3,0x1c91a003,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod3,0x1c91a003,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod3,0x1c91a003,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod3,0x1c91a003,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod3,0x1c91a003,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod3,0x1c91a003,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod3,0x1c91a003,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+M_C_1_Mod4,0x1801a004,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod4,0x1801a004,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod4,0x1801a004,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod4,0x1801a004,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod4,0x1801a004,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod4,0x1801a004,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod4,0x1801a004,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod4,0x1801a004,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod4,0x1801a004,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod4,0x1801a004,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod4,0x1801a004,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod4,0x1801a004,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod4,0x1801a004,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod4,0x1801a004,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod4,0x1801a004,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod4,0x1801a004,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod4,0x1801a004,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod4,0x1801a004,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod4,0x1801a004,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod4,0x1801a004,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod4,0x1801a004,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod4,0x1801a004,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod4,0x1801a004,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod4,0x1801a004,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod4,0x1801a004,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod4,0x1801a004,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod4,0x1801a004,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod4,0x802a004,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod4,0x802a004,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod4,0x180ba004,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod4,0x180ba004,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod4,0x180ba004,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod4,0x180ba004,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod4,0x1c91a004,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod4,0x1c91a004,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod4,0x1c91a004,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod4,0x1c91a004,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod4,0x1c91a004,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod4,0x1c91a004,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod4,0x1c91a004,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod4,0x1c91a004,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod4,0x1c91a004,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod4,0x1c91a004,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod4,0x1c91a004,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod4,0x1c91a004,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod4,0x1c91a004,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod4,0x1c91a004,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod4,0x1c91a004,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod4,0x1c91a004,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod4,0x1c91a004,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod4,0x1c91a004,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod4,0x1c91a004,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod4,0x1c91a004,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+M_C_1_Mod5,0x1801a005,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod5,0x1801a005,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod5,0x1801a005,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod5,0x1801a005,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod5,0x1801a005,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod5,0x1801a005,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod5,0x1801a005,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod5,0x1801a005,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod5,0x1801a005,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod5,0x1801a005,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod5,0x1801a005,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod5,0x1801a005,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod5,0x1801a005,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod5,0x1801a005,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod5,0x1801a005,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod5,0x1801a005,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod5,0x1801a005,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod5,0x1801a005,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod5,0x1801a005,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod5,0x1801a005,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod5,0x1801a005,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod5,0x1801a005,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod5,0x1801a005,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod5,0x1801a005,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod5,0x1801a005,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod5,0x1801a005,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod5,0x1801a005,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod5,0x802a005,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod5,0x802a005,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod5,0x180ba005,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod5,0x180ba005,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod5,0x180ba005,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod5,0x180ba005,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod5,0x1c91a005,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod5,0x1c91a005,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod5,0x1c91a005,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod5,0x1c91a005,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod5,0x1c91a005,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod5,0x1c91a005,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod5,0x1c91a005,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod5,0x1c91a005,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod5,0x1c91a005,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod5,0x1c91a005,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod5,0x1c91a005,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod5,0x1c91a005,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod5,0x1c91a005,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod5,0x1c91a005,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod5,0x1c91a005,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod5,0x1c91a005,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod5,0x1c91a005,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod5,0x1c91a005,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod5,0x1c91a005,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod5,0x1c91a005,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+M_C_1_Mod6,0x1801a006,8,ChargingModuleState,0,8,Intel,Unsigned,1,0,0,17,,0x00=Normal OFF;0x01=ON;0x11=Fault OFF
+M_C_1_Mod6,0x1801a006,8,OutputVoltage,8,16,Intel,Unsigned,0.1,0,0,1100,V,
+M_C_1_Mod6,0x1801a006,8,OutputCurrent,24,16,Intel,Unsigned,0.01,0,0,200,A,
+M_C_1_Mod6,0x1801a006,8,Flt_InputUndervoltage,40,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input undervoltage)
+M_C_1_Mod6,0x1801a006,8,Flt_InputPhaseLoss,41,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input phase loss)
+M_C_1_Mod6,0x1801a006,8,Flt_InputOvervoltage,42,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module input overvoltage)
+M_C_1_Mod6,0x1801a006,8,Flt_OutputOvervoltage,43,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overvoltage)
+M_C_1_Mod6,0x1801a006,8,Flt_OutputOvercurrent,44,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module output overcurrent)
+M_C_1_Mod6,0x1801a006,8,Flt_TemperatureHigh,45,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module temperature high)
+M_C_1_Mod6,0x1801a006,8,Flt_FanFault,46,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module fan fault)
+M_C_1_Mod6,0x1801a006,8,Flt_HardwareFault,47,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Module hardware fault)
+M_C_1_Mod6,0x1801a006,8,Flt_BusException,48,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus exception)
+M_C_1_Mod6,0x1801a006,8,Flt_SCICommException,49,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (SCI communication exception)
+M_C_1_Mod6,0x1801a006,8,Flt_DischargeFault,50,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge fault)
+M_C_1_Mod6,0x1801a006,8,Flt_PFCShutdownException,51,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (PFC shutdown due to exception)
+M_C_1_Mod6,0x1801a006,8,Warn_OutputUndervoltage,52,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output undervoltage warning)
+M_C_1_Mod6,0x1801a006,8,Warn_OutputOvervoltage,53,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Output overvoltage warning)
+M_C_1_Mod6,0x1801a006,8,Warn_PowerLimitHighTemp,54,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to high temperature)
+M_C_1_Mod6,0x1801a006,8,Flt_ShortCircuit,55,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Short circuit fault)
+M_C_1_Mod6,0x1801a006,8,PFC_InputOvercurrent,56,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input overcurrent fault)
+M_C_1_Mod6,0x1801a006,8,PFC_MainsFrequencyFault,57,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains frequency fault)
+M_C_1_Mod6,0x1801a006,8,PFC_MainsImbalanceFault,58,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Mains imbalance fault)
+M_C_1_Mod6,0x1801a006,8,PFC_DCTzFault,59,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (DCTz fault)
+M_C_1_Mod6,0x1801a006,8,PFC_AddressConflict,60,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Address conflict)
+M_C_1_Mod6,0x1801a006,8,PFC_BusBias,61,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus bias)
+M_C_1_Mod6,0x1801a006,8,PFC_PhaseException,62,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Phase exception fault)
+M_C_1_Mod6,0x1801a006,8,PFC_BusOvervoltage,63,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Bus overvoltage fault)
+M_C_2_Mod6,0x802a006,8,CommandReceived,0,8,Intel,Unsigned,1,0,0,1,,0x00=Not received;0x01=Received
+M_C_2_Mod6,0x802a006,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+M_C_3_Mod6,0x180ba006,8,APhaseVoltage,0,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod6,0x180ba006,8,BPhaseVoltage,16,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod6,0x180ba006,8,CPhaseVoltage,32,16,Intel,Unsigned,0.1,0,0,6553.5,V,
+M_C_3_Mod6,0x180ba006,8,AmbientTemperature,48,16,Intel,Unsigned,1,0,0,65535,degC,
+M_C_4_Mod6,0x1c91a006,8,MS_CurrentEqualization,0,1,Intel,Unsigned,1,0,0,1,,Current equalization
+M_C_4_Mod6,0x1c91a006,8,MS_Mute,1,1,Intel,Unsigned,1,0,0,1,,Mute
+M_C_4_Mod6,0x1c91a006,8,MS_E2FaultOverflow,2,1,Intel,Unsigned,1,0,0,1,,E2 Fault overflow
+M_C_4_Mod6,0x1c91a006,8,MS_InputSource,3,1,Intel,Unsigned,1,0,0,1,,0=AC input source;1=DC input source
+M_C_4_Mod6,0x1c91a006,8,MS_E2FaultEnable,4,1,Intel,Unsigned,1,0,0,1,,0=E2 fault enabled;1=E2 fault disabled
+M_C_4_Mod6,0x1c91a006,8,MS_HotPlugEnable,5,1,Intel,Unsigned,1,0,0,1,,0=hot-plug disabled;1=hot-plug enabled
+M_C_4_Mod6,0x1c91a006,8,ModuleState_Reserved,6,10,Intel,Unsigned,1,0,0,0,,Reserved bits 6-15 of Module state
+M_C_4_Mod6,0x1c91a006,8,FW_PreLevelWaveStop,16,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Pre-level wave stop)
+M_C_4_Mod6,0x1c91a006,8,FW_HotPlugFault,17,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Hot-plug fault)
+M_C_4_Mod6,0x1c91a006,8,FW_CANCommTimeout,18,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (CAN communication timeout)
+M_C_4_Mod6,0x1c91a006,8,FW_Reserved_Bit3,19,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod6,0x1c91a006,8,FW_RelayOperationFault,20,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Relay operation fault)
+M_C_4_Mod6,0x1c91a006,8,FW_Reserved_Bit5,21,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Reserved)
+M_C_4_Mod6,0x1c91a006,8,FW_InternalOvertemp,22,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Internal element overtemperature)
+M_C_4_Mod6,0x1c91a006,8,FW_AirInletOvertemp,23,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Air inlet overtemperature)
+M_C_4_Mod6,0x1c91a006,8,FW_InputPowerLimit,24,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Input power limit)
+M_C_4_Mod6,0x1c91a006,8,FW_PowerLimitOvertemp,25,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Power limit due to overtemperature)
+M_C_4_Mod6,0x1c91a006,8,FW_DischargeChangeoverAbnormal,26,1,Intel,Unsigned,1,0,0,1,,0=Normal;1=Faulty (Discharge changeover abnormal)
+M_C_4_Mod6,0x1c91a006,8,FaultWarning_Reserved,27,5,Intel,Unsigned,1,0,0,0,,Reserved bits 11-15 of Fault/warning
+M_C_4_Mod6,0x1c91a006,8,Reserved_Standby,32,32,Intel,Unsigned,1,0,0,0,,"Standby, reserved"
+C_M_1_Broadcast,0x803ffa0,8,ModuleProcessingFlag,0,24,Intel,Unsigned,1,0,0,16777215,,"Bitmask, bit(n-1)=module address n (address multiple=0 => addr 1-24); see 9.2.1 note2 addressing algorithm"
+C_M_1_Broadcast,0x803ffa0,8,ModuleStartStop,24,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_1_Broadcast,0x803ffa0,8,AddressMultiple,32,4,Intel,Unsigned,1,0,0,9,,"Address multiple, range 0x00-0x09"
+C_M_1_Broadcast,0x803ffa0,8,ModuleGroupNumber,36,4,Intel,Unsigned,1,0,0,15,,0=default group number 1
+C_M_1_Broadcast,0x803ffa0,8,Reserved_Standby,40,24,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_2_Broadcast,0x1004ffa0,8,ModuleProcessingFlag,0,24,Intel,Unsigned,1,0,0,16777215,,"Bitmask, bit(n-1)=module address n (address multiple=0 => addr 1-24); see 9.2.1 note2 addressing algorithm"
+C_M_2_Broadcast,0x1004ffa0,8,AddressMultiple,24,4,Intel,Unsigned,1,0,0,9,,"Address multiple, range 0x00-0x09"
+C_M_2_Broadcast,0x1004ffa0,8,ModuleGroupNumber,28,4,Intel,Unsigned,1,0,0,15,,0=default group number 1
+C_M_2_Broadcast,0x1004ffa0,8,ChargingVoltage,32,16,Intel,Unsigned,0.1,0,0,750,V,
+C_M_2_Broadcast,0x1004ffa0,8,ChargingCurrent,48,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_3,0x1805ffa0,8,Reserved_Standby,0,64,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_4,0x18aaffa0,8,InputModeConfig,0,8,Intel,Unsigned,1,0,0,1,,0=Input DC mode;1=Input AC mode; only accepted when module powered off
+C_M_4,0x18aaffa0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,Reserved
+C_M_12,0x1c90ffa0,8,AddressSettingMode,0,8,Intel,Unsigned,1,0,0,1,,0=Automatic;1=Manual; default Automatic; only accepted when module powered off
+C_M_12,0x1c90ffa0,8,Reserved,8,56,Intel,Unsigned,1,0,0,0,,Reserved
+C_M_23_Broadcast,0x1809ffa0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address applied to all modules, 1/bit"
+C_M_23_Broadcast,0x1809ffa0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod1,0x180901a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod1,0x180901a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod1,0x80601a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod1,0x80601a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod1,0x80601a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod1,0x80601a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod1,0x80601a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod2,0x180902a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod2,0x180902a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod2,0x80602a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod2,0x80602a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod2,0x80602a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod2,0x80602a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod2,0x80602a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod3,0x180903a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod3,0x180903a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod3,0x80603a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod3,0x80603a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod3,0x80603a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod3,0x80603a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod3,0x80603a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod4,0x180904a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod4,0x180904a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod4,0x80604a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod4,0x80604a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod4,0x80604a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod4,0x80604a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod4,0x80604a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod5,0x180905a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod5,0x180905a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod5,0x80605a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod5,0x80605a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod5,0x80605a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod5,0x80605a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod5,0x80605a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_23_Mod6,0x180906a0,8,NewModuleAddress,0,8,Intel,Unsigned,1,0,1,240,,"New address of module, 1/bit"
+C_M_23_Mod6,0x180906a0,8,Reserved_Standby,8,56,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"
+C_M_24_Mod6,0x80606a0,8,ModuleStartStop,0,8,Intel,Unsigned,1,0,0,255,,0x55=Stop;0xAA=Start
+C_M_24_Mod6,0x80606a0,8,ChargingMode,8,8,Intel,Unsigned,1,0,0,255,,In standby mode: 0x00
+C_M_24_Mod6,0x80606a0,8,ChargingVoltage,16,16,Intel,Unsigned,0.1,0,0,1000,V,
+C_M_24_Mod6,0x80606a0,8,ChargingCurrent,32,16,Intel,Unsigned,0.01,0,0,500,A,
+C_M_24_Mod6,0x80606a0,8,Reserved_Standby,48,16,Intel,Unsigned,1,0,0,0,,"Standby, fixed 0x00"

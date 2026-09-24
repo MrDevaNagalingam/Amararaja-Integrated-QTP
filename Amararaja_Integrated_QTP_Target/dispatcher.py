@@ -4,6 +4,13 @@ import tests
 COMMANDS = {
     "PING_TEST": lambda params=None: tests.ping(params or {}),
     "SELEC_EM4M_TEST": lambda params=None: tests.selec_em4m(params or {}),
+    "EDC2150_TEST": lambda params=None: tests.edc2150_meter(params or {}),
+    "CAN_CONTROLLER_START_ALL_TEST": lambda params=None: tests.can_controller_start_all(params or {}),
+    "CAN_CONTROLLER_STOP_ALL_TEST": lambda params=None: tests.can_controller_stop_all(params or {}),
+    "CAN_CONTROLLER_SET_ALL_TEST": lambda params=None: tests.can_controller_set_all(params or {}),
+    "CAN_CONTROLLER_START_TEST": lambda params=None: tests.can_controller_start(params or {}),
+    "CAN_CONTROLLER_STOP_TEST": lambda params=None: tests.can_controller_stop(params or {}),
+    "RFID_TEST": lambda params=None: tests.rfid(params or {}),
     "ECHO": lambda params=None: tests.echo(params or {}),
     "PING": lambda params=None: tests.ping(params or {}),
 }

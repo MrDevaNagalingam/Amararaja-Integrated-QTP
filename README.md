@@ -31,12 +31,23 @@ The host automatically sends `PING` after connection as a startup transport chec
 | `1` or `ping` | Run TC-01 Ping test over TCP and record the result |
 | `2` | Run TC-02 Selec EM4M AC Energy Meter live Modbus read test and record the result |
 | `3` | Run TC-03 EDC 2150 DC Energy Meter live Modbus read test and record the result |
-| `4` | Run TC-04 CAN Controller Node Start all |
-| `5` | Run TC-04 CAN Controller Node Stop All |
-| `6` | Run TC-04 CAN Controller Node Set All |
-| `7` | Run TC-04 CAN Controller Node Start |
-| `8` | Run TC-04 CAN Controller Node Stop |
-| `9` | Run TC-05 RFID Verification |
+| `4` | Run TC-04 Read IMD 1 |
+| `5` | Run TC-04 Read IMD 2 |
+| `6` | Run TC-05 CAN Controller Node Start all |
+| `7` | Run TC-05 CAN Controller Node Stop All |
+| `8` | Run TC-05 CAN Controller Node Set All |
+| `9` | Run TC-05 CAN Controller Node Start |
+| `10` | Run TC-05 CAN Controller Node Stop |
+| `11` | Run TC-06 RFID Verification |
+| `12` | Run TC-07 PT1000/Thermistor-10k Temperature Sensor |
+| `13` | Run TC-08 4G network verification |
+| `14` | Run TC-12 Relay Control All OFF |
+| `15` | Run TC-12 Relay Control DC1 ON |
+| `16` | Run TC-12 Relay Control DC2 ON |
+| `17` | Run TC-12 Relay Control AC ON |
+| `18` | Run TC-12 Relay Control MERGER ON |
+| `19` | Flash Phytec_MSP_DC.bin binary |
+| `20` | Flash Coil_Control.bin binary |
 | `echo hello` | Target returns `hello` |
 | `q` | Send STOP_QTP, await acknowledgment, exit host and target |
 | `exit` or `0` | Same as q |
@@ -48,9 +59,17 @@ TC-02 copies the standalone Selec EM4M Modbus code into target `selec_EM4M.py` a
 
 TC-03 copies the standalone EDC2150 DC Energy Meter code into target `edc2150.py` and runs live per-parameter Modbus RTU FC03 reads. Before communication starts, the host asks whether to use `/dev/ttyCH9344USB1 @ 9600 8N1, slave ID 2` or enter a custom port, baud rate, and slave ID. The PC result displays the EDC2150 parameter table with start address, raw float, scaled value, and availability. The target saves the full TX/RX debug log at `/home/root/TC_03_EDC2150_DC_Energy_Meter_<date>.txt`. The test passes when all available configured parameters return valid responses with valid CRC; reactive power and frequency are marked not available because their YAML start register is 0.
 
-TC-04 copies the CAN controller support into target `can_setup.py`, `can_controller_node.py`, `can_controller_qtp.py`, and `tonhe_can_messages_6modules.csv`. The QTP entries send controller commands over SocketCAN using defaults from target `config.py`: `mcu_mcan0`, `125000` bit/s, group `1`, voltage `500.0`, current `41.0`, module address `1`. Each QTP CAN action configures the CAN interface and sends the timing command `C_M_3` once before the selected command, matching the standalone controller startup behavior. The copied controller shell commands remain available in `can_controller_node.py` for future use, including `disable_gun`, `dual_gun`, `exit`, `gun`, `help`, `only_rx`, `only_tx`, `quiet`, `set_address`, `set_address_mode`, `set_input_mode`, `show_both`, `status`, `stop`, and `verbose`. Target TX/RX command logs are saved under `/home/root/TC_04_CAN_Controller_..._<date>.txt`.
+TC-04 reads both Bender IMD devices through target `imd_read.py`. IMD1 uses default `/dev/ttyCH9344USB0 @ 9600 8N1, slave ID 5` and IMD2 uses default `/dev/ttyCH9344USB2 @ 9600 8N1, slave ID 4`. The host asks whether to use those defaults or enter a custom port, baud rate, parity, and slave ID. The PC output shows the decoded measurement table before the result status. Target full TX/RX logs are saved at `/home/root/TC_04_Read_IMD_1_<date>.txt` and `/home/root/TC_04_Read_IMD_2_<date>.txt`.
 
-TC-05 runs RFID verification inside target `tests.py`. Before communication starts, the host asks whether to use `/dev/ttyUSB0 @ 115200 8N1` or enter a custom port and baud rate. The target sends `02 00 02 34 31 03 06`, reads repeated responses, and passes when a response contains operation status `0x59` with a 4-byte card serial number. Status `0x4E` means no card serial number returned. The PC result displays only the detected card serial number and target log path; no-card responses are kept in the target log only. The target saves the full TX/RX debug log at `/home/root/TC_05_RFID_Verification_<date>.txt`.
+TC-05 copies the CAN controller support into target `can_setup.py`, `can_controller_node.py`, `can_controller_qtp.py`, and `tonhe_can_messages_6modules.csv`. The QTP entries ask whether to use default SocketCAN settings `mcu_mcan0 @ 125000 bit/s` or enter a custom channel and bitrate, then send controller commands using target `config.py` defaults for the remaining values, group `1`, voltage `500.0`, current `41.0`, module address `1`. Each one-shot QTP CAN action configures the CAN interface and sends the timing command `C_M_3` once before the selected command. Menu 6 starts a background keep-alive that sends `C_M_3` every 5 seconds, and menu 7 stops that background keep-alive. The copied controller shell commands remain available in `can_controller_node.py` for future use, including `disable_gun`, `dual_gun`, `exit`, `gun`, `help`, `only_rx`, `only_tx`, `quiet`, `set_address`, `set_address_mode`, `set_input_mode`, `show_both`, `status`, `stop`, and `verbose`. Target TX/RX command logs are saved under `/home/root/TC_05_CAN_Controller_..._<date>.txt`.
+
+TC-06 runs RFID verification inside target `tests.py`. Before communication starts, the host asks whether to use `/dev/ttyUSB0 @ 115200 8N1` or enter a custom port and baud rate. The target sends `02 00 02 34 31 03 06`, reads repeated responses, and passes when a response contains operation status `0x59` with a 4-byte card serial number. Status `0x4E` means no card serial number returned. The PC result displays only the detected card serial number and target log path; no-card responses are kept in the target log only. The target saves the full TX/RX debug log at `/home/root/TC_06_RFID_Verification_<date>.txt`.
+
+TC-07 runs PT1000/Thermistor-10k temperature verification through target `phyverso_temperature.py`. The target runs `phyverso_cli /dev/ttyS6 /root/config.json`, sends `T`, parses either `Gun... Temperature` lines or `Connector/get_temp()` debug lines, and shows a compact temperature table on the PC. The test passes when at least one valid temperature above the no-sensor value is detected. The full CLI output is saved under `/home/root/TC_07_PT1000_Thermistor_10k_Temperature_Sensor_<date>.txt`.
+
+TC-08 runs 4G QMI network verification through target `network_4g.py`. The target configures `/etc/qmi-network.conf` with APN `airtelgprs.com`, brings `wwu1u1i4` down/up in raw-IP mode, starts/stops/starts `qmi-network /dev/cdc-wdm0`, requests an IPv4 lease with `udhcpc`, checks `ifconfig wwu1u1i4`, and pings `google.com` using the 4G interface. The PC output shows the step table and target log path. Full command output is saved under `/home/root/TC_08_4G_Network_Verification_<date>.txt`.
+
+TC-12 runs MCU relay control through target `relay_control.py`. Relay actions 16-20 only send one UART command at `/dev/ttyS6 @ 115200 8N1` (`0` = all, `1` = DC1, `2` = DC2, `3` = AC, `4` = MERGER) and check the MCU response text. Flashing is handled separately by menu 21 and 22: menu 21 flashes `/usr/lib/firmware/Phytec_MSP_DC.bin`, and menu 22 flashes `Amararaja_Integrated_QTP_Target/MCU_binary/Coil_Control.bin`. The helper does not use `phyVERSO_MCU_debug`.
 
 Add future visible tests to the host `TESTS` table, translate them in `command_handler.py`, and register target-side implementations in dispatcher `COMMANDS`. Current commands run synchronously and have a 10-second host response deadline; long-running tests need cancellation and timeout design before integration.
 
@@ -71,3 +90,4 @@ See `docs/tcp_tlv_data_frame.md`, `docs/test_matrix.md`, and `docs/hardware_mapp
 If connecting fails, check the IP, start the target first, and check port/firewall access. A bind error usually means the port is already in use. The original plain-text socket examples cannot directly communicate with this framed QTP implementation; use the new host and target together.
 
 The host `test_logger.py` maintains the reference-style detailed test log and summary.
+

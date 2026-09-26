@@ -9,7 +9,11 @@ from datetime import datetime
 import config
 import selec_EM4M
 import edc2150
+import imd_read
 import can_controller_qtp
+import relay_control
+import phyverso_temperature
+import network_4g
 
 try:
     import serial
@@ -46,6 +50,36 @@ def edc2150_meter(params):
     )
 
 
+def imd1(params):
+    device_config = dict(imd_read.IMD1_CONFIG)
+    device_config["undervoltage_alarm_threshold_V"] = config.IMD1_UNDERVOLTAGE_ALARM_THRESHOLD_V
+    device_config["overvoltage_alarm_threshold_V"] = config.IMD1_OVERVOLTAGE_ALARM_THRESHOLD_V
+    return imd_read.run_qtp_test(
+        test_name="TC-04_Read_IMD_1",
+        port=params.get("port", config.IMD1_PORT),
+        baudrate=int(params.get("baudrate", config.IMD1_BAUDRATE)),
+        parity=params.get("parity", config.IMD1_PARITY),
+        slave_id=int(params.get("slave_id", config.IMD1_SLAVE_ID)),
+        timeout=float(params.get("timeout", config.IMD1_TIMEOUT)),
+        device_config=device_config,
+    )
+
+
+def imd2(params):
+    device_config = dict(imd_read.IMD2_CONFIG)
+    device_config["undervoltage_alarm_threshold_V"] = config.IMD2_UNDERVOLTAGE_ALARM_THRESHOLD_V
+    device_config["overvoltage_alarm_threshold_V"] = config.IMD2_OVERVOLTAGE_ALARM_THRESHOLD_V
+    return imd_read.run_qtp_test(
+        test_name="TC-04_Read_IMD_2",
+        port=params.get("port", config.IMD2_PORT),
+        baudrate=int(params.get("baudrate", config.IMD2_BAUDRATE)),
+        parity=params.get("parity", config.IMD2_PARITY),
+        slave_id=int(params.get("slave_id", config.IMD2_SLAVE_ID)),
+        timeout=float(params.get("timeout", config.IMD2_TIMEOUT)),
+        device_config=device_config,
+    )
+
+
 def can_controller_start_all(params):
     return can_controller_qtp.run_qtp_command("start_all", params)
 
@@ -64,6 +98,14 @@ def can_controller_start(params):
 
 def can_controller_stop(params):
     return can_controller_qtp.run_qtp_command("stop", params)
+
+
+def can_keep_alive_start(params):
+    return can_controller_qtp.start_keep_alive(params)
+
+
+def can_keep_alive_stop(params):
+    return can_controller_qtp.stop_keep_alive(params)
 
 
 class Tee:
@@ -118,7 +160,7 @@ def rfid(params):
     attempts = int(params.get("attempts", config.RFID_ATTEMPTS))
     interval = float(params.get("interval", config.RFID_INTERVAL))
     read_size = int(params.get("read_size", config.RFID_READ_SIZE))
-    log_path = make_target_log_path("TC-05_RFID_Verification")
+    log_path = make_target_log_path("TC-06_RFID_Verification")
     os.makedirs(os.path.dirname(log_path), exist_ok=True)
     detected = None
     with open(log_path, "w", encoding="utf-8") as log_file:
@@ -171,15 +213,98 @@ def rfid(params):
     }
 
 
+def temperature_sensor(params):
+    return phyverso_temperature.run_qtp_test(
+        cli_path=params.get("cli_path", config.PHYVERSO_CLI),
+        serial_port=params.get("serial_port", config.TEMP_SENSOR_SERIAL_PORT),
+        config_path=params.get("config_path", config.PHYVERSO_CONFIG_PATH),
+        command=params.get("command", config.TEMP_SENSOR_COMMAND),
+        startup_wait=float(params.get("startup_wait", config.TEMP_SENSOR_STARTUP_WAIT)),
+        read_timeout=float(params.get("read_timeout", config.TEMP_SENSOR_READ_TIMEOUT)),
+    )
+
+
+def network_4g_test(params):
+    return network_4g.run_qtp_test(
+        interface=params.get("interface", config.FOURG_INTERFACE),
+        qmi_device=params.get("qmi_device", config.FOURG_QMI_DEVICE),
+        apn=params.get("apn", config.FOURG_APN),
+        config_path=params.get("config_path", config.FOURG_QMI_CONFIG),
+        ping_host=params.get("ping_host", config.FOURG_PING_HOST),
+        ping_count=int(params.get("ping_count", config.FOURG_PING_COUNT)),
+    )
+
+
+def run_relay_control(action, params):
+    return relay_control.run_qtp_test(
+        action=action,
+        serial_port=params.get("serial_port", config.RELAY_MCU_SERIAL_PORT),
+        baudrate=int(params.get("baudrate", config.RELAY_MCU_BAUDRATE)),
+        uart_timeout=float(params.get("uart_timeout", config.RELAY_UART_TIMEOUT)),
+    )
+
+
+def relay_control_on_all(params):
+    return run_relay_control("all_on", params)
+
+
+def relay_control_dc1_on(params):
+    return run_relay_control("dc1_on", params)
+
+
+def relay_control_dc2_on(params):
+    return run_relay_control("dc2_on", params)
+
+
+def relay_control_ac_on(params):
+    return run_relay_control("ac_on", params)
+
+
+def relay_control_merger_on(params):
+    return run_relay_control("merger_on", params)
+
+
+def run_flash_binary(image_name, params):
+    return relay_control.run_flash_test(
+        image_name=image_name,
+        serial_port=params.get("serial_port", config.RELAY_MCU_SERIAL_PORT),
+        flasher=params.get("flasher", config.RELAY_FLASHER),
+        coil_bin=params.get("coil_bin", config.RELAY_COIL_CONTROL_BIN),
+        default_bin=params.get("default_bin", config.RELAY_DEFAULT_BIN),
+        flash_timeout=float(params.get("flash_timeout", config.RELAY_FLASH_TIMEOUT)),
+    )
+
+
+def flash_phytec_msp_dc(params):
+    return run_flash_binary("default", params)
+
+
+def flash_coil_control(params):
+    return run_flash_binary("coil", params)
+
+
 TESTS = {
     "PING": ping,
     "ECHO": echo,
     "SELEC_EM4M": selec_em4m,
     "EDC2150": edc2150_meter,
+    "IMD1": imd1,
+    "IMD2": imd2,
     "CAN_CONTROLLER_START_ALL": can_controller_start_all,
     "CAN_CONTROLLER_STOP_ALL": can_controller_stop_all,
     "CAN_CONTROLLER_SET_ALL": can_controller_set_all,
     "CAN_CONTROLLER_START": can_controller_start,
     "CAN_CONTROLLER_STOP": can_controller_stop,
+    "CAN_KEEP_ALIVE_START": can_keep_alive_start,
+    "CAN_KEEP_ALIVE_STOP": can_keep_alive_stop,
     "RFID": rfid,
+    "TEMPERATURE_SENSOR": temperature_sensor,
+    "NETWORK_4G": network_4g_test,
+    "RELAY_CONTROL_ALL_OFF": relay_control_on_all,
+    "RELAY_CONTROL_DC1_ON": relay_control_dc1_on,
+    "RELAY_CONTROL_DC2_ON": relay_control_dc2_on,
+    "RELAY_CONTROL_AC_ON": relay_control_ac_on,
+    "RELAY_CONTROL_MERGER_ON": relay_control_merger_on,
+    "FLASH_PHYTEC_MSP_DC": flash_phytec_msp_dc,
+    "FLASH_COIL_CONTROL": flash_coil_control,
 }

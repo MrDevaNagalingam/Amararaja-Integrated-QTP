@@ -74,11 +74,11 @@ class IntegrationTests(unittest.TestCase):
                 host = subprocess.run(
                     [sys.executable, str(standalone / "Host/main.py"),
                      "127.0.0.1", "--port", str(port), "--report-dir", report_dir],
-                    input="1\ny\nping\ny\necho hello target\nUNKNOWN\nq\n", capture_output=True,
+                    input="1\ny\nping\ny\nUNKNOWN\nq\n", capture_output=True,
                     text=True, timeout=15)
                 self.assertEqual(host.returncode, 0, host.stdout + host.stderr)
-                self.assertIn("hello target", host.stdout)
-                self.assertIn("NOT_IMPLEMENTED", host.stdout)
+                self.assertIn("[ERROR] Invalid choice: UNKNOWN", host.stdout)
+                self.assertNotIn("NOT_IMPLEMENTED", host.stdout)
                 self.assertIn("STOP_QTP: PASS", host.stdout)
                 summaries = list(pathlib.Path(report_dir).glob("test_summary_*.txt"))
                 self.assertEqual(len(summaries), 1)

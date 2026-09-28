@@ -47,7 +47,6 @@ def display_main_menu():
     print("=" * 80)
     print("  Enter test number (1-22)")
     print("  Enter 'ping' to run TC-01")
-    print("  Enter 'echo <text>' to send text")
     print("  Enter 'q' to stop target and quit")
     print("=" * 80)
 
@@ -83,7 +82,6 @@ def interactive_mode(handler):
             run_single_test(handler, 1)
         elif text.isdigit() and text in TESTS:
             run_single_test(handler, int(text))
-        elif text.lower().startswith("echo "):
-            handler.execute_command("ECHO", {"text": text[5:]})
         else:
-            handler.execute_command(text.upper())
+            print("[ERROR] Invalid choice: {}".format(text))
+

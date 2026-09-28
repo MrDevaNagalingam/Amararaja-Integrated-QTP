@@ -26,8 +26,7 @@ Prerequisite: start target and connect host. Hardware qualification is limited t
 | TC-12 Relay Control MERGER ON | TEST_RELAY_CONTROL_MERGER_ON -> RELAY_CONTROL_MERGER_ON_TEST | Select 20; sends command `4` and expects `MERGER ON`. Flash `Coil_Control.bin` separately first using menu 22. | Flash firmware separately with menu 21 or 22 |
 | Flash Phytec_MSP_DC.bin binary | TEST_FLASH_PHYTEC_MSP_DC -> FLASH_PHYTEC_MSP_DC_TEST | Select 21; flashes default MCU firmware `/usr/lib/firmware/Phytec_MSP_DC.bin` using `MSPM0_bsl_flasher flash /dev/ttyS6 ...`. | None |
 | Flash Coil_Control.bin binary | TEST_FLASH_COIL_CONTROL -> FLASH_COIL_CONTROL_TEST | Select 22; flashes project coil-control firmware `MCU_binary/Coil_Control.bin` using `MSPM0_bsl_flasher flash /dev/ttyS6 ...`. | Flash default firmware with menu 21 when relay testing is finished |
-| COM-02 | ECHO | Enter echo hello; target returns PASS with hello | None |
-| COM-03 | Unknown | Enter UNKNOWN; target returns NOT_IMPLEMENTED and remains available | None |
+| COM-03 | Unknown menu input | Enter UNKNOWN; host prints `[ERROR] Invalid choice: UNKNOWN` locally and does not send it to the target. | None |
 | COM-04 | STOP_QTP | Enter q; receive PASS, host and target exit | Restart target |
 | COM-05 | Reconnect | Disconnect client without STOP_QTP, connect again; PING succeeds | STOP_QTP |
 

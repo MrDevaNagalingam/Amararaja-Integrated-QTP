@@ -33,25 +33,26 @@ The host automatically sends `PING` after connection as a startup transport chec
 | `3` | Run TC-03 EDC 2150 DC Energy Meter live Modbus read test and record the result |
 | `4` | Run TC-04 Read IMD 1 |
 | `5` | Run TC-04 Read IMD 2 |
-| `6` | Run TC-05 CAN Controller Node Start all |
-| `7` | Run TC-05 CAN Controller Node Stop All |
-| `8` | Run TC-05 CAN Controller Node Set All |
-| `9` | Run TC-05 CAN Controller Node Start |
-| `10` | Run TC-05 CAN Controller Node Stop |
-| `11` | Run TC-06 RFID Verification |
-| `12` | Run TC-07 PT1000/Thermistor-10k Temperature Sensor |
-| `13` | Run TC-08 4G network verification |
-| `14` | Run TC-12 Relay Control All OFF |
-| `15` | Run TC-12 Relay Control DC1 ON |
-| `16` | Run TC-12 Relay Control DC2 ON |
-| `17` | Run TC-12 Relay Control AC ON |
-| `18` | Run TC-12 Relay Control MERGER ON |
-| `19` | Flash Phytec_MSP_DC.bin binary |
-| `20` | Flash Coil_Control.bin binary |
-| `echo hello` | Target returns `hello` |
+| `6` | Run TC-05 CAN Controller Node Keep Alive Start |
+| `7` | Run TC-05 CAN Controller Node Keep Alive Stop |
+| `8` | Run TC-05 CAN Controller Node Start all |
+| `9` | Run TC-05 CAN Controller Node Stop All |
+| `10` | Run TC-05 CAN Controller Node Set All |
+| `11` | Run TC-05 CAN Controller Node Start |
+| `12` | Run TC-05 CAN Controller Node Stop |
+| `13` | Run TC-06 RFID Verification |
+| `14` | Run TC-08 4G network verification |
+| `15` | Run TC-07 PT1000/Thermistor-10k Temperature Sensor |
+| `16` | Run TC-12 Relay Control All OFF |
+| `17` | Run TC-12 Relay Control DC1 ON |
+| `18` | Run TC-12 Relay Control DC2 ON |
+| `19` | Run TC-12 Relay Control AC ON |
+| `20` | Run TC-12 Relay Control MERGER ON |
+| `21` | Flash Phytec_MSP_DC.bin binary |
+| `22` | Flash Coil_Control.bin binary |
 | `q` | Send STOP_QTP, await acknowledgment, exit host and target |
 | `exit` or `0` | Same as q |
-| Other text | Send as uppercase command; unknown commands return NOT_IMPLEMENTED |
+| Other text | Print local invalid-choice error; not sent to target |
 
 The target needs no keyboard input. STOP_QTP stops the target Python server, not the board/OS. Restart the target script before a new session. Ctrl+C/EOF at the host prompt also requests STOP_QTP. A network failure or an interruption during a request does not confirm remote shutdown. An ordinary client disconnect leaves the target listening for reconnection.
 
@@ -75,7 +76,7 @@ Add future visible tests to the host `TESTS` table, translate them in `command_h
 
 ## Logs
 
-Host `test_log/` contains timestamped `test_log_<timestamp>.txt` and `test_summary_<timestamp>.txt`. Detailed logs include connection events, commands, target output, status, and errors. Reports use the BOSCH reference format: TEST #, Command, Started, [EXECUTING], [RESULT], Result, Details, Working as Expected, Completed, and TEST EXECUTION SUMMARY with statistics and detailed results. Only explicitly selected test runs count in the summary; startup PING, ECHO, and STOP_QTP remain in the detailed log. TC-01 requires PASS and the expected PONG message, then asks the operator `Is this test working as expected? (y/n):`. Answering `n` records the test as FAIL. This is a TCP application ping, not an ICMP/network ping or hardware qualification test.
+Host `test_log/` contains timestamped `test_log_<timestamp>.txt` and `test_summary_<timestamp>.txt`. Detailed logs include connection events, commands, target output, status, and errors. Reports use the BOSCH reference format: TEST #, Command, Started, [EXECUTING], [RESULT], Result, Details, Working as Expected, Completed, and TEST EXECUTION SUMMARY with statistics and detailed results. Only explicitly selected test runs count in the summary; startup PING and STOP_QTP remain in the detailed log. TC-01 requires PASS and the expected PONG message, then asks the operator `Is this test working as expected? (y/n):`. Answering `n` records the test as FAIL. This is a TCP application ping, not an ICMP/network ping or hardware qualification test.
 
 ## Layout
 
@@ -90,4 +91,5 @@ See `docs/tcp_tlv_data_frame.md`, `docs/test_matrix.md`, and `docs/hardware_mapp
 If connecting fails, check the IP, start the target first, and check port/firewall access. A bind error usually means the port is already in use. The original plain-text socket examples cannot directly communicate with this framed QTP implementation; use the new host and target together.
 
 The host `test_logger.py` maintains the reference-style detailed test log and summary.
+
 
